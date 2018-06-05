@@ -6,7 +6,8 @@ const Input = ({
   value,
   onChangeText,
   placeholder,
-  secureTextEntry
+  secureTextEntry,
+  keyboardType
 }) => {
   const { inputStyle, labelStyle, containerStyle } = styles;
 
@@ -14,10 +15,12 @@ const Input = ({
     <View style={containerStyle}>
       <Text style={labelStyle}>{label}</Text>
       <TextInput
+        style={inputStyle}
         secureTextEntry={secureTextEntry}
         placeholder={placeholder}
         autoCorrect={false}
-        style={inputStyle}
+        autoCapitalize='none'
+        keyboardType={keyboardType}
         value={value}
         onChangeText={onChangeText}
       />
